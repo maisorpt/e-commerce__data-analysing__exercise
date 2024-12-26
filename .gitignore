@@ -7,3 +7,4 @@ olist_customers_dataset.csv
 .ipynb_checkpoints/
 .vscode/
 myenv/
+.devcontainer/
