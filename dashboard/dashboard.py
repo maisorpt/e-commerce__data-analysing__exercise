@@ -217,12 +217,76 @@ if page == "Conclusion":
     st.header("📚 Conclusion")
     st.write("""
     ### Q1: Bagaimana hubungan antara rating produk dan kategori produk dalam hal jumlah ulasan dan rating rata-rata, dan apakah kategori produk tertentu memiliki rating lebih tinggi daripada yang lain?
-    Hubungan antara rating produk dan kategori produk menunjukkan bahwa kategori dengan ulasan lebih dari 2000 memiliki rating yang lebih konsisten, sementara kategori dengan ulasan kurang dari 2000 cenderung memiliki rating yang lebih bervariasi. Beberapa kategori produk memiliki rating lebih tinggi daripada yang lain, tergantung pada jumlah ulasan yang diterima.
+#### 1. **Temuan Utama**  
+   - **Jumlah Rating vs. Kategori Produk**: Beberapa kategori produk memiliki jumlah rating yang sangat dominan dibandingkan kategori lain. Hal ini menunjukkan tingkat popularitas atau tingkat adopsi yang berbeda antar kategori. Kategori dengan jumlah rating tertinggi cenderung menjadi kategori yang menarik perhatian pasar luas, sedangkan kategori dengan jumlah rating rendah kemungkinan memiliki audiens yang lebih spesifik atau ceruk.  
+   - **Rating Rata-rata vs. Kategori Produk**: Rating rata-rata bervariasi secara signifikan antar kategori, dengan beberapa kategori menunjukkan konsistensi rating yang lebih tinggi. Kategori tertentu secara konsisten menerima rating tinggi, mengindikasikan kepuasan pelanggan yang lebih baik terhadap produk di kategori tersebut. Sebaliknya, kategori dengan rating rata-rata rendah menunjukkan adanya potensi masalah pada produk atau ekspektasi pelanggan yang tidak terpenuhi.  
+   
 
-    ### Q2: Apa faktor-faktor yang paling berpengaruh terhadap total penjualan produk?
-   Berdasarkan data yang diperoleh, terdapat korelasi yang lemah antar variabel yang dianalisis. Meskipun terdapat hubungan antara jumlah barang yang terjual `sold_count`, harga rata-rata barang `avg_item_price`, jumlah ulasan `review_count`, dan skor ulasan rata-rata `average_review_score`, nilai koefisien korelasinya menunjukkan hubungan yang cukup rendah. Sebagai contoh, hubungan antara jumlah barang yang terjual dan harga rata-rata barang memiliki koefisien negatif sebesar -0.066, yang menunjukkan adanya sedikit penurunan harga dengan peningkatan jumlah barang terjual. Demikian pula, hubungan antara harga rata-rata barang dan jumlah ulasan juga menunjukkan korelasi negatif kecil. Secara keseluruhan, analisis ini menunjukkan bahwa faktor-faktor ini tidak saling berpengaruh kuat satu sama lain dalam dataset yang ada.
+#### 2. **Interpretasi**  
+   - **Kategori dengan Jumlah Rating Tinggi**: Jumlah rating yang tinggi seringkali mencerminkan pasar yang besar dan kompetitif. Hal ini juga bisa menunjukkan kesadaran merek yang kuat, strategi distribusi yang efektif, atau produk yang sering dibeli dalam jumlah besar.  
+   - **Kategori dengan Rating Rata-rata Tinggi**: Kategori dengan rating rata-rata tinggi mencerminkan produk yang memenuhi ekspektasi pelanggan atau bahkan melampauinya. Ini dapat disebabkan oleh kualitas produk yang superior, pengalaman pengguna yang memuaskan, atau persepsi merek yang positif.  
+   - **Kategori dengan Rating Rata-rata Rendah**: Rating rendah dapat mengindikasikan kelemahan pada kualitas produk, layanan, atau ketidaksesuaian antara produk dan kebutuhan pelanggan. Ini juga dapat mengindikasikan ulasan negatif akibat pengalaman buruk atau ekspektasi yang tidak sesuai dengan realitas.  
+   - **Hubungan Rating dan Kategori**: Adanya variasi antara jumlah rating dan rating rata-rata mengindikasikan bahwa kategori populer tidak selalu berkorelasi dengan kepuasan pelanggan. Beberapa kategori mungkin memiliki volume tinggi tetapi rating rendah, mencerminkan potensi masalah kepuasan meskipun produknya banyak digunakan.  
+   
+
+#### 3. **Rekomendasi**  
+   - **Untuk Kategori dengan Jumlah Rating Tinggi dan Rating Rata-rata Rendah**:  
+     a. Fokus pada analisis mendalam terkait ulasan negatif untuk memahami aspek-aspek yang perlu diperbaiki, seperti kualitas produk, pelayanan, atau ekspektasi yang tidak terpenuhi.  
+     b. Lakukan survei pelanggan untuk mengidentifikasi kebutuhan dan ekspektasi yang lebih spesifik.  
+     c. Perbaiki komunikasi pemasaran agar tidak menjanjikan hal yang berlebihan dibandingkan realitas produk.  
+   - **Untuk Kategori dengan Rating Rata-rata Tinggi**:  
+     a. Manfaatkan keunggulan ini sebagai daya tarik pemasaran, seperti menonjolkan testimoni pelanggan atau penghargaan yang relevan.  
+     b. Pertimbangkan ekspansi ke segmen pasar lain dengan strategi yang serupa untuk meningkatkan pangsa pasar.  
+     c. Evaluasi apakah atribut yang membuat kategori ini unggul dapat diterapkan ke kategori lain.  
+   - **Untuk Kategori dengan Jumlah Rating Rendah**:  
+     a. Lakukan promosi atau kampanye pemasaran untuk meningkatkan visibilitas kategori tersebut di pasar.  
+     b. Evaluasi apakah produk di kategori ini sesuai dengan kebutuhan pasar saat ini. Jika tidak, pertimbangkan untuk melakukan inovasi atau reposisi produk.  
+   - **Secara Umum**:  
+     a. Perkuat strategi pengumpulan ulasan dengan mendorong pelanggan memberikan feedback secara sukarela melalui insentif atau program loyalitas.  
+     b. Gunakan data ulasan untuk membuat keputusan berbasis data, seperti memperbaiki fitur produk atau mengubah strategi harga.  
+     c. Lakukan benchmarking dengan kompetitor untuk memahami keunggulan dan kelemahan relatif di setiap kategori.  
+
+---
+                     
+### Q2: Apa faktor-faktor yang paling berpengaruh terhadap total penjualan produk?
+   #### **Kesimpulan Berdasarkan Data**  
+
+1. **Jumlah Ulasan Sebagai Faktor Utama**  
+   - **Temuan:** Korelasi sangat tinggi antara jumlah ulasan (*review_count*) dan total penjualan (*sold_count*) (**0.9999**) menunjukkan bahwa produk dengan lebih banyak ulasan cenderung terjual lebih banyak.  
+   - **Mengapa Penting:** Jumlah ulasan mencerminkan tingkat keterlibatan pelanggan, menciptakan kepercayaan bagi calon pembeli. Produk dengan banyak ulasan lebih terlihat populer dan memiliki bukti sosial yang kuat.  
+   - **Rekomendasi:** Fokus pada strategi untuk mendorong lebih banyak ulasan dari pelanggan, seperti memberikan insentif untuk ulasan atau menggunakan pengingat otomatis pasca-pembelian.
+
+2. **Harga Memiliki Pengaruh Negatif, Tetapi Tidak Signifikan**  
+   - **Temuan:** Korelasi negatif yang sangat lemah antara harga rata-rata produk (*avg_item_price*) dan total penjualan (**-0.0661**) menunjukkan bahwa harga tidak memainkan peran besar dalam memengaruhi penjualan secara keseluruhan.  
+   - **Mengapa Penting:** Pembeli mungkin lebih mementingkan nilai daripada harga mutlak, terutama jika produk terlihat populer (banyak ulasan) atau memiliki kualitas yang tinggi.  
+   - **Rekomendasi:** Jangan hanya berfokus pada menurunkan harga untuk meningkatkan penjualan. Sebaliknya, berikan nilai tambah seperti deskripsi produk yang lebih menarik, diskon bundling, atau peningkatan layanan pelanggan.
+
+3. **Skor Rata-Rata Ulasan Hampir Tidak Berpengaruh**  
+   - **Temuan:** Korelasi lemah antara skor rata-rata ulasan (*average_review_score*) dan total penjualan (**0.0143**) menunjukkan bahwa jumlah ulasan lebih penting daripada skor rata-rata ulasan.  
+   - **Mengapa Penting:** Ini mungkin disebabkan karena pembeli lebih dipengaruhi oleh kuantitas ulasan dibandingkan kualitasnya, terutama jika skor tidak terlalu buruk.  
+   - **Rekomendasi:** Fokus pada menjaga skor ulasan dalam kategori “baik” (contoh: di atas 4 dari 5). Jangan terlalu khawatir dengan ulasan yang sedikit negatif, tetapi tetap tanggapi ulasan buruk dengan cepat untuk menjaga reputasi.
+
+
+#### **Mengapa Hasil Ini Terjadi?**  
+- **Peran Bukti Sosial:** Banyaknya ulasan menciptakan persepsi positif bahwa produk tersebut banyak digunakan oleh orang lain, sehingga meningkatkan kepercayaan calon pembeli.  
+- **Persepsi Nilai Lebih Penting daripada Harga:** Pembeli tidak terlalu sensitif terhadap harga jika mereka merasa produk memberikan nilai yang cukup.  
+- **Kualitas Ulasan Tidak Terlalu Dominan:** Selama skor ulasan tidak terlalu buruk, pembeli mungkin lebih fokus pada kuantitas ulasan karena lebih meyakinkan.
+
+
+#### **Tindakan Strategis yang Direkomendasikan:**  
+1. **Mendorong Lebih Banyak Ulasan:**  
+   - Terapkan program insentif, seperti diskon untuk ulasan, atau kampanye email untuk mengingatkan pembeli memberikan ulasan.  
+   - Optimalkan pengalaman pembelian untuk meningkatkan kepuasan pelanggan, yang secara alami memotivasi mereka memberikan ulasan positif.
+
+2. **Menambah Nilai Tanpa Fokus Utama pada Harga:**  
+   - Tawarkan bundling produk, diskon terbatas waktu, atau manfaat lain yang membuat pembeli merasa mendapatkan lebih banyak.  
+   - Berikan fokus pada pemasaran visual dan *copywriting* yang menunjukkan manfaat produk.
+
+3. **Jaga Kualitas Produk dan Tanggapi Ulasan Buruk:**  
+   - Pastikan produk memiliki kualitas memadai sehingga skor ulasan tidak jatuh terlalu rendah.  
+   - Gunakan ulasan negatif sebagai peluang untuk memperbaiki layanan dan membangun kepercayaan dengan merespons secara profesional.
              
-    #### Note:
-    - Data di atas memberikan wawasan yang berguna untuk memanfaatkan faktor-faktor seperti harga, ulasan, dan kategori dalam strategi penjualan dan pemasaran.
+### Note:
+- Data di atas memberikan wawasan yang berguna untuk memanfaatkan faktor-faktor seperti harga, ulasan, dan kategori dalam strategi penjualan dan pemasaran.
     """)
     st.write("📈 **Further Exploration**: Consider exploring correlations between other variables and sales for a deeper insight.")
